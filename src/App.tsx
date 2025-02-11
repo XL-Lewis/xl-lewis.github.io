@@ -3,6 +3,8 @@ import './App.css'
 function App() {
   return (
     <div className="resume">
+      <title> Lewis Hyman - Software Engineer </title>
+
       <header className="header">
         <h1>Lewis Hyman - Software Engineer</h1>
         <div className="contact-info">
