@@ -1,42 +1,123 @@
+:root {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --text-primary: #e1e1e1;
+  --text-secondary: #a1a1a1;
+  --accent: #646cff;
+  --accent-hover: #7b82ff;
+  --border: #333;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+.resume {
+  text-align: left;
+  line-height: 1.6;
+}
+
+.header {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.contact-info {
+  margin: 1rem 0;
+  color: var(--text-secondary);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.social-links {
+  margin: 1rem 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.social-links a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.card {
-  padding: 2em;
+.social-links a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
 }
 
-.read-the-docs {
-  color: #888;
+section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-primary);
+}
+
+h2 {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.job {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.job:last-child {
+  border-bottom: none;
+}
+
+.job-header {
+  margin-bottom: 0.5rem;
+}
+
+.job-period,
+.job-location {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+ul {
+  margin: 0.5rem 0;
+  padding-left: 2rem;
+}
+
+li {
+  margin: 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.references {
+  text-align: center;
+  margin-top: 3rem;
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+strong {
+  color: var(--text-primary);
 }
