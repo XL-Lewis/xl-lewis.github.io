@@ -17,6 +17,12 @@ export interface Experience {
     responsibilities?: string[];
 }
 
+export interface Project {
+    name: string;
+    language: string;
+    url: string;
+}
+
 export interface Education {
     degree: string;
     institution: string;

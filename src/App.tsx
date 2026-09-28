@@ -2,6 +2,7 @@ import './App.css'
 import { Header } from './components/Header/Header'
 import { Skills } from './components/Skills/Skills'
 import { Experience } from './components/Experience/Experience'
+import { Projects } from './components/Projects/Projects'
 import { Education } from './components/Education/Education'
 import { Accolades } from './components/Accolades/Accolades'
 import { Activities } from './components/Activities/Activities'
@@ -10,6 +11,7 @@ import {
   socialLinks,
   skills,
   experiences,
+  projects,
   education,
   accolades,
   activities
@@ -29,6 +31,7 @@ function App() {
 
       <Skills skills={skills} />
       <Experience experiences={experiences} />
+      <Projects projects={projects} />
       <Education education={education} />
       <Accolades accolades={accolades} />
       <Activities activities={activities} />
