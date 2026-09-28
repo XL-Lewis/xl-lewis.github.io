@@ -1,60 +1,58 @@
-.section .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 0.75rem;
+.section .project-list {
     padding: 0;
     list-style: none;
 }
 
-.section .project-grid li {
+.section .project-list li {
     margin: 0;
+    border-top: 1px solid var(--rule);
 }
 
-.project-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 0.75rem;
-    height: 100%;
-    padding: 1rem 1.1rem;
-    color: var(--text);
-    background-color: var(--surface-raised);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+.section .project-list li:first-child {
+    border-top: none;
 }
 
-.project-card:hover {
-    color: var(--text);
-    border-color: var(--accent);
-    transform: translateY(-2px);
+.project-row {
+    display: grid;
+    grid-template-columns: minmax(12rem, 2fr) minmax(6rem, 1fr) minmax(0, 3fr);
+    align-items: baseline;
+    gap: 0.25rem 2rem;
+    padding: 0.7rem 0;
+    text-decoration: none;
+}
+
+.section .project-list li:first-child .project-row {
+    padding-top: 0;
 }
 
 .project-name {
     font-weight: 600;
 }
 
-.project-name::after {
-    content: ' ↗';
+.project-language,
+.project-url {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.project-url {
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.project-row:hover .project-name,
+.project-row:hover .project-url {
     color: var(--accent);
 }
 
-.project-language {
-    align-self: flex-start;
-    padding: 0.1rem 0.55rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--accent);
-    background-color: var(--accent-soft);
-    border-radius: 999px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .project-card {
-        transition: none;
+@media (max-width: 760px) {
+    .project-row {
+        grid-template-columns: minmax(0, 1fr) auto;
     }
 
-    .project-card:hover {
-        transform: none;
+    .project-url {
+        grid-column: 1 / -1;
+        text-align: left;
     }
 }

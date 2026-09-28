@@ -14,7 +14,7 @@ export function Skills({ skills }: SkillsProps) {
           <div key={skill.category} className="skill-row">
             <dt>{skill.category}</dt>
             <dd>
-              <ul className="skill-tags">
+              <ul className="skill-items">
                 {skill.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
