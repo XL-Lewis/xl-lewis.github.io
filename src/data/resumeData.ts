@@ -1,4 +1,4 @@
-import { SocialLink, Skill, Experience, Education, Accolade, Activity } from '../types/Resume'
+import { SocialLink, Skill, Experience, Project, Education, Accolade, Activity } from '../types/Resume'
 
 export const personalInfo = {
     name: 'Lewis Hyman',
@@ -22,47 +22,60 @@ export const socialLinks: SocialLink[] = [
 export const skills: Skill[] = [
     {
         category: 'Languages',
-        items: ['Rust', 'Ruby', 'Python', 'Javascript']
+        items: ['Python', 'Ruby', 'Rust', 'Svelte']
     },
     {
-        category: 'Frameworks',
-        items: ['Ruby on Rails', 'React']
+        category: 'Cloud & Infrastructure',
+        items: ['AWS', 'Kubernetes', 'Docker', 'GitHub Actions', 'Terraform']
     },
     {
-        category: 'Infrastructure',
-        items: ['Docker', 'Kubernetes', 'OpenSearch', 'Git/Github', 'AWS (+ EKS)']
+        category: 'Databases & Data',
+        items: ['Databricks', 'SQL', 'OpenSearch', 'Postgres']
+    },
+    {
+        category: 'Frameworks & Tools',
+        items: ['FastAPI', 'Ruby on Rails', 'React']
+    },
+    {
+        category: 'Methodologies',
+        items: ['Agile', 'Scrum', 'CI/CD']
     }
 ]
 
 export const experiences: Experience[] = [
     {
-        title: 'Software Developer',
-        company: 'Master Communications (Radio Telecom)',
-        period: 'Aug 2021 – Mar 2024 / Oct 2024 - Present',
+        title: 'Mid Level Software Developer - Internal Systems, Tooling and R&D',
+        company: 'Betashares - ETF Provider ($100bn FUM)',
+        period: 'Aug 2025 - Present',
         location: 'Sydney, NSW',
         achievements: [
-            'Reduced cluster operation costs for OpenSearch by over 50% implementing an automated storage tiering system',
-            'Reduced code and deployment complexity for internal data translation pipelines by 85%',
-            'Designed and implemented a Rust websocket server to manage Vehicle charging for EV Buses',
-            'Refactored API communication with backend services via protocol buffers'
+            'Assist with a major BigQuery → Databricks migration, redesigning the business-wide ingestion system (Medallion Architecture)',
+            'Ingest new data sources and manage the full star schema pipeline via dbt',
+            'Design and implement an AI-driven analysis tool to surface insights from sales contact data',
+            'Design and implement a configuration-based reconciliation engine',
+            'Design and implement a global notification service, wrapping email/Slack/in-app messages for our internal platform'
         ],
         responsibilities: [
-            'Write, test, and deploy maintainable code via Github',
-            'Review pull requests and refactor existing code',
-            'Engage with clients to gather requirements (via BDD) and manage project timelines',
-            'Collaborate with team members in an Agile workplace with daily scrum meetings',
-            'Manage deployments via AWS Cloud & Kubernetes'
+            'Operate with a high degree of autonomy, gathering requirements from internal stakeholders and building production-ready tooling that improves operational efficiency',
+            'Build and upgrade CI/CD pipelines to improve deployment reliability and release velocity',
+            'Architect, deploy, and maintain services within a distributed microservice ecosystem',
+            'Manage production infrastructure and deployments using AWS, Kubernetes (EKS), and Terraform',
+            'Mentor end users, design/run workshops and uplift software skills business-wide'
         ]
     },
     {
-        title: 'IT / Operations Consultant',
-        company: 'Process / Automation Consulting',
-        period: 'May 2024 – Oct 2024',
+        title: 'Junior / Mid Level Software Developer',
+        company: 'Master Communications (Radio Telecom)',
+        period: 'Dec 2021 - Aug 2025',
         location: 'Sydney, NSW',
+        achievements: [
+            'Design and implement an EV bus charging control system (Rust / WebSockets)',
+            'Design and implement full-stack features for a Ruby on Rails / React fleet management platform',
+            'Mitigate a major potential outage affecting 1000+ devices in the field, restoring functionality and improving security',
+            'Optimise OpenSearch infrastructure, cutting AWS operational costs by 50+%'
+        ],
         responsibilities: [
-            'Identify, document and propose efficiency improvements to internal workflows',
-            'Assist with migration of project management software',
-            'Improve process automation w/ Microsoft Power Platform'
+            'Collaborate with clients to gather and translate business requirements'
         ]
     },
     {
@@ -72,9 +85,32 @@ export const experiences: Experience[] = [
         location: 'Sydney, NSW',
         responsibilities: [
             'Diagnose and repair issues with motor-driven bluetooth controlled wheels',
-            'Design and implement fixes where possible to improve the quality of future manufacturing',
+            'Design and implement fixes to improve the quality of future manufacturing',
             'Assist with mechanical and electrical design of upcoming products'
         ]
+    }
+]
+
+export const projects: Project[] = [
+    {
+        name: 'Advent of Code 2024',
+        language: 'Ruby',
+        url: 'https://github.com/XL-Lewis/Advent-of-code-2024'
+    },
+    {
+        name: 'Share Portfolio Tracker',
+        language: 'Python',
+        url: 'https://github.com/XL-Lewis/share-parcel-tracker'
+    },
+    {
+        name: 'Wordle CLI Assistant',
+        language: 'Rust',
+        url: 'https://github.com/XL-Lewis/wordle-helper'
+    },
+    {
+        name: 'Website',
+        language: 'React',
+        url: 'https://github.com/XL-Lewis/xl-lewis.github.io'
     }
 ]
 
@@ -85,7 +121,7 @@ export const education: Education[] = [
         period: 'April 2022',
         location: 'Sydney, NSW',
         details: [
-            'Second Class, Division 1 Honors',
+            'Second Class, Division 1 Honours',
             'International Placement in Indonesia, partnered with Taman Pintar',
             'Thesis project: \'Drone Mounted Magnetometer-Based Meteorite Detection System\''
         ]
@@ -106,7 +142,7 @@ export const accolades: Accolade[] = [
 export const activities: Activity[] = [
     {
         name: 'Inala Charity Lunch Volunteer',
-        period: '2012-2024'
+        period: '2012-2025'
     },
     {
         name: 'AV Technician / Technical Director with Macquarie Musical and Drama Societies',
@@ -114,6 +150,6 @@ export const activities: Activity[] = [
     },
     {
         name: 'Macquarie University Hockey',
-        period: '2021-2024'
+        period: '2021-2025'
     }
 ]

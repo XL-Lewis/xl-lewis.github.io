@@ -9,7 +9,7 @@ export function Experience({ experiences }: ExperienceProps) {
   return (
     <section className="experience-section">
       <h2>EXPERIENCE</h2>
-      {experiences.map((exp, index) => (
+      {experiences.map((exp) => (
         <div key={`${exp.company}-${exp.period}`} className="job">
           <div className="job-header">
             <h3>{exp.title}</h3>
