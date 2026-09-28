@@ -1,4 +1,3 @@
-import './App.css'
 import { Header } from './components/Header/Header'
 import { Skills } from './components/Skills/Skills'
 import { Experience } from './components/Experience/Experience'

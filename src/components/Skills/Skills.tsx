@@ -1,4 +1,5 @@
 import { Skill } from '../../types/Resume'
+import { Section } from '../Section/Section'
 import './Skills.css'
 
 interface SkillsProps {
@@ -7,15 +8,21 @@ interface SkillsProps {
 
 export function Skills({ skills }: SkillsProps) {
   return (
-    <section className="skills-section">
-      <h2>SKILLS / LANGUAGES / TECHNOLOGIES</h2>
-      <ul>
+    <Section title="Skills / Languages / Technologies">
+      <dl className="skills">
         {skills.map((skill) => (
-          <li key={skill.category}>
-            <strong>{skill.category}:</strong> {skill.items.join(', ')}
-          </li>
+          <div key={skill.category} className="skill-row">
+            <dt>{skill.category}</dt>
+            <dd>
+              <ul className="skill-tags">
+                {skill.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </dd>
+          </div>
         ))}
-      </ul>
-    </section>
+      </dl>
+    </Section>
   )
 }
