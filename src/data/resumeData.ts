@@ -75,7 +75,11 @@ export const experiences: Experience[] = [
             'Optimise OpenSearch infrastructure, cutting AWS operational costs by 50+%'
         ],
         responsibilities: [
-            'Collaborate with clients to gather and translate business requirements'
+            'Maintain production infrastructure and services, managing deployments via AWS and Kubernetes',
+            'Write, test, and deploy maintainable code via GitHub',
+            'Review pull requests and refactor existing code',
+            'Collaborate with clients to gather and translate business requirements (via BDD) and manage project timelines',
+            'Work within an Agile team with daily scrum meetings'
         ]
     },
     {
