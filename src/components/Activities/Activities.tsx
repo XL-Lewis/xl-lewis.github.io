@@ -1,5 +1,5 @@
 import { Activity } from '../../types/Resume'
-import './Activities.css'
+import { Section } from '../Section/Section'
 
 interface ActivitiesProps {
   activities: Activity[];
@@ -7,15 +7,15 @@ interface ActivitiesProps {
 
 export function Activities({ activities }: ActivitiesProps) {
   return (
-    <section className="activities-section">
-      <h2>VOLUNTEERING / CO-CURRICULAR</h2>
-      <ul>
-        {activities.map((activity, index) => (
-          <li key={index}>
-            {activity.name} ({activity.period})
+    <Section title="Volunteering / Co-curricular">
+      <ul className="dated-list">
+        {activities.map((activity) => (
+          <li key={activity.name}>
+            <span>{activity.name}</span>
+            <span className="dated-list-date">{activity.period}</span>
           </li>
         ))}
       </ul>
-    </section>
+    </Section>
   )
 }

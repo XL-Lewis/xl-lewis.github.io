@@ -1,4 +1,5 @@
 import { Experience as ExperienceType } from '../../types/Resume'
+import { Section } from '../Section/Section'
 import './Experience.css'
 
 interface ExperienceProps {
@@ -7,40 +8,45 @@ interface ExperienceProps {
 
 export function Experience({ experiences }: ExperienceProps) {
   return (
-    <section className="experience-section">
-      <h2>EXPERIENCE</h2>
-      {experiences.map((exp) => (
-        <div key={`${exp.company}-${exp.period}`} className="job">
-          <div className="job-header">
-            <h3>{exp.title}</h3>
-            <div className="company">{exp.company}</div>
-            <div className="job-period">{exp.period}</div>
-            <div className="job-location">{exp.location}</div>
-          </div>
-
-          {exp.achievements && exp.achievements.length > 0 && (
-            <div className="achievements">
-              <h4>Specific Projects / Achievements</h4>
-              <ul>
-                {exp.achievements.map((achievement, i) => (
-                  <li key={i}>{achievement}</li>
-                ))}
-              </ul>
+    <Section title="Experience">
+      <ol className="jobs">
+        {experiences.map((exp) => (
+          <li key={`${exp.company}-${exp.period}`} className="job">
+            <div className="entry-header">
+              <div>
+                <h3 className="entry-title">{exp.title}</h3>
+                <p className="entry-subtitle">{exp.company}</p>
+              </div>
+              <div className="entry-meta">
+                <span>{exp.period}</span>
+                <span>{exp.location}</span>
+              </div>
             </div>
-          )}
 
-          {exp.responsibilities && exp.responsibilities.length > 0 && (
-            <div className="responsibilities">
-              <h4>General Responsibilities</h4>
-              <ul>
-                {exp.responsibilities.map((responsibility, i) => (
-                  <li key={i}>{responsibility}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      ))}
-    </section>
+            {exp.achievements && exp.achievements.length > 0 && (
+              <div className="job-group">
+                <h4>Projects &amp; Achievements</h4>
+                <ul>
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={i}>{achievement}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {exp.responsibilities && exp.responsibilities.length > 0 && (
+              <div className="job-group">
+                <h4>Responsibilities</h4>
+                <ul>
+                  {exp.responsibilities.map((responsibility, i) => (
+                    <li key={i}>{responsibility}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </li>
+        ))}
+      </ol>
+    </Section>
   )
 }

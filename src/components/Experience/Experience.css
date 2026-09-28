@@ -1,69 +1,67 @@
-.experience-section {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background-color: var(--bg-secondary);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.section .jobs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.experience-section h2 {
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+.section .job {
+    position: relative;
+    margin: 0;
+    padding: 0 0 2rem 1.75rem;
+    border-left: 2px solid var(--border);
 }
 
-.job {
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border);
+.section .job:last-child {
+    padding-bottom: 0.25rem;
+    border-left-color: transparent;
 }
 
-.job:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+.job::before {
+    content: '';
+    position: absolute;
+    top: 0.45rem;
+    left: -7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--surface);
+    border: 2px solid var(--accent);
 }
 
-.job-header {
-    margin-bottom: 1rem;
+.job:first-child::before {
+    background-color: var(--accent);
 }
 
-.job-header h3 {
-    margin: 0 0 0.5rem 0;
-    color: var(--text-primary);
-}
-
-.company {
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
-}
-
-.job-period,
-.job-location {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 0.25rem;
-}
-
-.achievements,
-.responsibilities {
+.job-group {
     margin-top: 1rem;
 }
 
-.achievements h4,
-.responsibilities h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
+.job-group h4 {
+    margin: 0 0 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
 }
 
-.experience-section ul {
-    margin: 0.5rem 0;
-    padding-left: 2rem;
+@media (max-width: 600px) {
+    .section .job {
+        padding-left: 1.25rem;
+    }
 }
 
-.experience-section li {
-    margin: 0.5rem 0;
-    color: var(--text-primary);
-    line-height: 1.5;
+@media print {
+    .section .job {
+        padding-left: 0;
+        border-left: none;
+    }
+
+    .job::before {
+        display: none;
+    }
+
+    .job-group h4 {
+        break-after: avoid;
+    }
 }

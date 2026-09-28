@@ -1,4 +1,5 @@
 import { Project } from '../../types/Resume'
+import { Section } from '../Section/Section'
 import './Projects.css'
 
 interface ProjectsProps {
@@ -7,18 +8,17 @@ interface ProjectsProps {
 
 export function Projects({ projects }: ProjectsProps) {
   return (
-    <section className="projects-section">
-      <h2>PERSONAL PROJECTS</h2>
-      <ul>
+    <Section title="Personal Projects">
+      <ul className="project-grid">
         {projects.map((project) => (
           <li key={project.url}>
-            <a href={project.url} target="_blank" rel="noopener noreferrer">
-              {project.name}
-            </a>{' '}
-            ({project.language})
+            <a className="project-card" href={project.url} target="_blank" rel="noopener noreferrer">
+              <span className="project-name">{project.name}</span>
+              <span className="project-language">{project.language}</span>
+            </a>
           </li>
         ))}
       </ul>
-    </section>
+    </Section>
   )
 }

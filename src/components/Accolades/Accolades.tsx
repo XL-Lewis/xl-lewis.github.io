@@ -1,5 +1,5 @@
 import { Accolade } from '../../types/Resume'
-import './Accolades.css'
+import { Section } from '../Section/Section'
 
 interface AccoladesProps {
   accolades: Accolade[];
@@ -7,15 +7,15 @@ interface AccoladesProps {
 
 export function Accolades({ accolades }: AccoladesProps) {
   return (
-    <section className="accolades-section">
-      <h2>ACCOLADES AND ACCOMPLISHMENTS</h2>
-      <ul>
-        {accolades.map((accolade, index) => (
-          <li key={index}>
-            {accolade.title} ({accolade.year})
+    <Section title="Accolades and Accomplishments">
+      <ul className="dated-list">
+        {accolades.map((accolade) => (
+          <li key={accolade.title}>
+            <span>{accolade.title}</span>
+            <span className="dated-list-date">{accolade.year}</span>
           </li>
         ))}
       </ul>
-    </section>
+    </Section>
   )
 }
