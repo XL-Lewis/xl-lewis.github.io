@@ -108,9 +108,14 @@ export const projects: Project[] = [
         url: 'https://github.com/XL-Lewis/wordle-helper'
     },
     {
-        name: 'Website',
-        language: 'React',
-        url: 'https://github.com/XL-Lewis/xl-lewis.github.io'
+        name: 'Index Rebalancer',
+        language: 'Python',
+        url: 'https://github.com/XL-Lewis/Index-Rebalancer'
+    },
+    {
+        name: 'Follow the Money',
+        language: 'Python',
+        url: 'https://github.com/XL-Lewis/follow-the-money'
     }
 ]
 
