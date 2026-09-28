@@ -23,27 +23,29 @@ export function Experience({ experiences }: ExperienceProps) {
               </div>
             </div>
 
-            {exp.achievements && exp.achievements.length > 0 && (
-              <div className="job-group">
-                <h4>Projects &amp; Achievements</h4>
-                <ul>
-                  {exp.achievements.map((achievement, i) => (
-                    <li key={i}>{achievement}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+            <div className="job-groups">
+              {exp.achievements && exp.achievements.length > 0 && (
+                <div>
+                  <h4>Projects &amp; Achievements</h4>
+                  <ul>
+                    {exp.achievements.map((achievement, i) => (
+                      <li key={i}>{achievement}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
-            {exp.responsibilities && exp.responsibilities.length > 0 && (
-              <div className="job-group">
-                <h4>Responsibilities</h4>
-                <ul>
-                  {exp.responsibilities.map((responsibility, i) => (
-                    <li key={i}>{responsibility}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+              {exp.responsibilities && exp.responsibilities.length > 0 && (
+                <div>
+                  <h4>Responsibilities</h4>
+                  <ul>
+                    {exp.responsibilities.map((responsibility, i) => (
+                      <li key={i}>{responsibility}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </li>
         ))}
       </ol>
